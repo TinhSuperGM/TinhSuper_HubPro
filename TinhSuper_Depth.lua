@@ -1,16 +1,19 @@
---[[ 
-    Obfuscated by TinhSuper Bot | v1.2.0
-    Skeleton build – minimal obfuscation
-]]--
+local function decode(s)
+    local out = {}
+    for num in string.gmatch(s, "/(%d+)") do
+        out[#out+1] = string.char(tonumber(num))
+    end
+    return table.concat(out)
+end
 
 -- TinhSuper Hub - FINAL CLEAN (Delta X / loadstring safe, centered, fonts fixed)
 -- Paste into StarterPlayer -> StarterPlayerScripts as a LocalScript
 -- Or host raw and loadstring(...)() — includes bootstrap safe-wait
 
-local Players = game:GetService(decode("/80/108/97/121/101/114/115"))
-local UIS = game:GetService(decode("/85/115/101/114/73/110/112/117/116/83/101/114/118/105/99/101"))
-local RunService = game:GetService(decode("/82/117/110/83/101/114/118/105/99/101"))
-local Workspace = game:GetService(decode("/87/111/114/107/115/112/97/99/101"))
+local Players = game:GetService("Players")
+local UIS = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local Workspace = game:GetService("Workspace")
 
 -- ===== BOOTSTRAP: wait for client ready (safe for Delta X / loadstring) =====
 while not Players.LocalPlayer do task.wait() end
@@ -18,7 +21,7 @@ local LocalPlayer = Players.LocalPlayer
 
 local PlayerGui
 repeat
-	PlayerGui = LocalPlayer:FindFirstChildOfClass(decode("/80/108/97/121/101/114/71/117/105"))
+	PlayerGui = LocalPlayer:FindFirstChildOfClass("PlayerGui")
 	task.wait()
 until PlayerGui
 
@@ -33,10 +36,10 @@ local function setZ(obj, z)
 		end
 		return
 	end
-	if obj and obj.IsA and obj:IsA(decode("/71/117/105/79/98/106/101/99/116")) then
+	if obj and obj.IsA and obj:IsA("GuiObject") then
 		obj.ZIndex = z
 		for _, d in ipairs(obj:GetDescendants()) do
-			if d:IsA(decode("/71/117/105/79/98/106/101/99/116")) then
+			if d:IsA("GuiObject") then
 				d.ZIndex = z + 1
 			end
 		end
@@ -44,7 +47,7 @@ local function setZ(obj, z)
 end
 
 -- ===== ScreenGui parented to PlayerGui (not CoreGui) =====
-local screenGui = Instance.new(decode("/83/99/114/101/101/110/71/117/105"))
+local screenGui = Instance.new("ScreenGui")
 screenGui.Name = decode("/84/105/110/104/83/117/112/101/114/72/117/98/95/70/105/110/97/108")
 screenGui.ResetOnSpawn = false
 screenGui.IgnoreGuiInset = true
@@ -63,15 +66,15 @@ local Mouse = LocalPlayer:GetMouse()
 local activeClickConn = nil
 
 -- ===== LAYER 1: MAIN (centered, AnchorPoint) =====
-local Main = Instance.new(decode("/70/114/97/109/101"))
-Main.Name = decode("/77/97/105/110")
+local Main = Instance.new("Frame")
+Main.Name = "Main"
 Main.Size = UDim2.new(0, 760, 0, 300)
 Main.AnchorPoint = Vector2.new(0.5, 0.5)
 Main.Position = UDim2.new(0.5, 0, 0.5, 0) -- center of screen
 Main.BackgroundColor3 = Color3.fromRGB(126,126,126)
 Main.BorderSizePixel = 0
 Main.Parent = screenGui
-Instance.new(decode("/85/73/67/111/114/110/101/114"), Main).CornerRadius = UDim.new(0,18)
+Instance.new("UICorner", Main).CornerRadius = UDim.new(0,18)
 setZ(Main, 10)
 
 -- Drag (correct: capture startPos when drag begins)
@@ -114,7 +117,7 @@ do
 end
 
 -- ===== LAYER 2: Title / By / Mode button / Action buttons / Close =====
-local Title = Instance.new(decode("/84/101/120/116/76/97/98/101/108"), Main)
+local Title = Instance.new("TextLabel", Main)
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 28
 Title.Text = decode("/84/105/110/104/83/117/112/101/114/32/72/117/98")
@@ -125,7 +128,7 @@ Title.Size = UDim2.new(0.6, 0, 0, 36)
 Title.TextXAlignment = Enum.TextXAlignment.Left
 setZ(Title, 20)
 
-local By = Instance.new(decode("/84/101/120/116/76/97/98/101/108"), Main)
+local By = Instance.new("TextLabel", Main)
 By.Font = Enum.Font.Gotham
 By.TextSize = 14
 By.Text = decode("/98/121/32/116/105/110/104/115/117/112/101/114/95/103/109")
@@ -136,7 +139,7 @@ By.Size = UDim2.new(0.6, 0, 0, 18)
 By.TextXAlignment = Enum.TextXAlignment.Left
 setZ(By, 20)
 
-local CoordTitle = Instance.new(decode("/84/101/120/116/76/97/98/101/108"), Main)
+local CoordTitle = Instance.new("TextLabel", Main)
 CoordTitle.Font = Enum.Font.GothamBold
 CoordTitle.TextSize = 20
 CoordTitle.Text = decode("/89/111/117/114/32/80/111/115/105/116/105/111/110/58") -- English to avoid font issues
@@ -147,7 +150,7 @@ CoordTitle.Size = UDim2.new(0.55, 0, 0, 28)
 CoordTitle.TextXAlignment = Enum.TextXAlignment.Left
 setZ(CoordTitle, 20)
 
-local CaseBtn = Instance.new(decode("/84/101/120/116/66/117/116/116/111/110"), Main)
+local CaseBtn = Instance.new("TextButton", Main)
 CaseBtn.Font = Enum.Font.Gotham
 CaseBtn.TextSize = 18
 CaseBtn.Text = decode("/77/111/100/101/32/32/128315")
@@ -156,10 +159,10 @@ CaseBtn.BackgroundColor3 = Color3.fromRGB(230,230,230)
 CaseBtn.Size = UDim2.new(0, 220, 0, 42)
 CaseBtn.Position = UDim2.new(1, -260, 0, 18) -- right-top nudged up
 CaseBtn.BorderSizePixel = 0
-Instance.new(decode("/85/73/67/111/114/110/101/114"), CaseBtn).CornerRadius = UDim.new(0,10)
+Instance.new("UICorner", CaseBtn).CornerRadius = UDim.new(0,10)
 setZ(CaseBtn, 22)
 
-local CheckBtn = Instance.new(decode("/84/101/120/116/66/117/116/116/111/110"), Main)
+local CheckBtn = Instance.new("TextButton", Main)
 CheckBtn.Font = Enum.Font.GothamBold
 CheckBtn.TextSize = 18
 CheckBtn.Text = decode("/67/104/101/99/107/32/80/111/115/105/116/105/111/110")
@@ -167,10 +170,10 @@ CheckBtn.TextColor3 = Color3.fromRGB(255,255,255)
 CheckBtn.BackgroundColor3 = Color3.fromRGB(39,180,40)
 CheckBtn.Size = UDim2.new(0, 220, 0, 42) -- reduced width
 CheckBtn.Position = UDim2.new(0.06, 0, 1, -66)
-Instance.new(decode("/85/73/67/111/114/110/101/114"), CheckBtn).CornerRadius = UDim.new(0,8)
+Instance.new("UICorner", CheckBtn).CornerRadius = UDim.new(0,8)
 setZ(CheckBtn, 20)
 
-local CopyBtn = Instance.new(decode("/84/101/120/116/66/117/116/116/111/110"), Main)
+local CopyBtn = Instance.new("TextButton", Main)
 CopyBtn.Font = Enum.Font.GothamBold
 CopyBtn.TextSize = 18
 CopyBtn.Text = decode("/67/111/112/121/32/80/111/115/105/116/105/111/110")
@@ -178,31 +181,31 @@ CopyBtn.TextColor3 = Color3.fromRGB(255,255,255)
 CopyBtn.BackgroundColor3 = Color3.fromRGB(60,140,220)
 CopyBtn.Size = UDim2.new(0, 220, 0, 42) -- reduced width
 CopyBtn.Position = UDim2.new(1, -260, 1, -66)
-Instance.new(decode("/85/73/67/111/114/110/101/114"), CopyBtn).CornerRadius = UDim.new(0,8)
+Instance.new("UICorner", CopyBtn).CornerRadius = UDim.new(0,8)
 setZ(CopyBtn, 20)
 
-local CloseCircle = Instance.new(decode("/84/101/120/116/66/117/116/116/111/110"), Main)
+local CloseCircle = Instance.new("TextButton", Main)
 CloseCircle.Font = Enum.Font.GothamBold
 CloseCircle.TextSize = 20
-CloseCircle.Text = decode("/88")
+CloseCircle.Text = "X"
 CloseCircle.TextColor3 = Color3.fromRGB(30,30,30)
 CloseCircle.BackgroundColor3 = Color3.fromRGB(245,245,245)
 CloseCircle.Size = UDim2.new(0,48,0,48)
 CloseCircle.Position = UDim2.new(0.5, -24, 1, -72)
-Instance.new(decode("/85/73/67/111/114/110/101/114"), CloseCircle).CornerRadius = UDim.new(1,0)
+Instance.new("UICorner", CloseCircle).CornerRadius = UDim.new(1,0)
 setZ(CloseCircle, 20)
 CloseCircle.MouseButton1Click:Connect(function() screenGui:Destroy() end)
 
 -- ===== LAYER 3: Display area (moved up to avoid touching title) =====
-local DisplayBg = Instance.new(decode("/70/114/97/109/101"), Main)
+local DisplayBg = Instance.new("Frame", Main)
 DisplayBg.Size = UDim2.new(0.94, 0, 0, 100)
 DisplayBg.Position = UDim2.new(0.03, 0, 0, 102) -- nudged up
 DisplayBg.BackgroundColor3 = Color3.fromRGB(48,48,48)
 DisplayBg.BorderSizePixel = 0
-Instance.new(decode("/85/73/67/111/114/110/101/114"), DisplayBg).CornerRadius = UDim.new(0,12)
+Instance.new("UICorner", DisplayBg).CornerRadius = UDim.new(0,12)
 setZ(DisplayBg, 15)
 
-local CoordText = Instance.new(decode("/84/101/120/116/76/97/98/101/108"), DisplayBg)
+local CoordText = Instance.new("TextLabel", DisplayBg)
 CoordText.Font = Enum.Font.GothamBold
 CoordText.TextSize = 30
 CoordText.TextColor3 = Color3.fromRGB(255,255,255)
@@ -217,18 +220,18 @@ CoordText.TextYAlignment = Enum.TextYAlignment.Center
 setZ(CoordText, 30)
 
 -- ===== LAYER 4: Dropdown popup (overlay) =====
-local Popup = Instance.new(decode("/70/114/97/109/101"), screenGui)
+local Popup = Instance.new("Frame", screenGui)
 Popup.Size = UDim2.new(0, 220, 0, 160)
 Popup.BackgroundColor3 = Color3.fromRGB(245,245,245)
 Popup.BorderSizePixel = 0
 Popup.Visible = false
-Instance.new(decode("/85/73/67/111/114/110/101/114"), Popup).CornerRadius = UDim.new(0,10)
+Instance.new("UICorner", Popup).CornerRadius = UDim.new(0,10)
 setZ(Popup, 60)
 
-local options = {decode("/67/70/114/97/109/101"), decode("/80/97/114/116"), decode("/77/111/100/101/108"), decode("/77/111/117/115/101")}
-local SelectedCase = decode("/67/70/114/97/109/101")
+local options = {"CFrame", "Part", "Model", "Mouse"}
+local SelectedCase = "CFrame"
 for i, name in ipairs(options) do
-	local btn = Instance.new(decode("/84/101/120/116/66/117/116/116/111/110"), Popup)
+	local btn = Instance.new("TextButton", Popup)
 	btn.Size = UDim2.new(1, -16, 0, 34)
 	btn.Position = UDim2.new(0, 8, 0, 8 + (i-1)*38)
 	btn.Font = Enum.Font.Gotham
@@ -236,7 +239,7 @@ for i, name in ipairs(options) do
 	btn.Text = name
 	btn.BackgroundColor3 = Color3.fromRGB(95,95,95)
 	btn.TextColor3 = Color3.fromRGB(245,245,245)
-	Instance.new(decode("/85/73/67/111/114/110/101/114"), btn).CornerRadius = UDim.new(0,6)
+	Instance.new("UICorner", btn).CornerRadius = UDim.new(0,6)
 	btn.ZIndex = 61
 
 	btn.MouseButton1Click:Connect(function()
@@ -298,17 +301,17 @@ end)
 
 local function awaitClickAndSetCoord(kind)
 	if activeClickConn then activeClickConn:Disconnect(); activeClickConn = nil end
-	CoordText.Text = decode("/40/67/108/105/99/107/32/111/110/32/116/104/101/32/119/111/114/108/100/32/116/111/32/112/105/99/107/32")..kind..decode("/41")
+	CoordText.Text = decode("/40/67/108/105/99/107/32/111/110/32/116/104/101/32/119/111/114/108/100/32/116/111/32/112/105/99/107/32")..kind..")"
 	CoordText.Visible = true
 
 	activeClickConn = Mouse.Button1Down:Connect(function()
 		local target = Mouse.Target
-		if target and target:IsA(decode("/66/97/115/101/80/97/114/116")) then
-			if kind == decode("/80/97/114/116") then
+		if target and target:IsA("BasePart") then
+			if kind == "Part" then
 				LastCoord = string.format(decode("/67/70/114/97/109/101/46/110/101/119/40/37/46/51/102/44/32/37/46/51/102/44/32/37/46/51/102/41"), target.Position.X, target.Position.Y, target.Position.Z)
 			else
-				local model = target:FindFirstAncestorOfClass(decode("/77/111/100/101/108"))
-				local p = model and (model:FindFirstChild(decode("/72/117/109/97/110/111/105/100/82/111/111/116/80/97/114/116")) or model.PrimaryPart) or target
+				local model = target:FindFirstAncestorOfClass("Model")
+				local p = model and (model:FindFirstChild("HumanoidRootPart") or model.PrimaryPart) or target
 				LastCoord = string.format(decode("/67/70/114/97/109/101/46/110/101/119/40/37/46/51/102/44/32/37/46/51/102/44/32/37/46/51/102/41"), p.Position.X, p.Position.Y, p.Position.Z)
 			end
 			CoordText.Text = LastCoord
@@ -323,9 +326,9 @@ end
 
 CheckBtn.MouseButton1Click:Connect(function()
 	Popup.Visible = false
-	if SelectedCase == decode("/67/70/114/97/109/101") then
+	if SelectedCase == "CFrame" then
 		local char = LocalPlayer.Character
-		local hrp = char and char:FindFirstChild(decode("/72/117/109/97/110/111/105/100/82/111/111/116/80/97/114/116"))
+		local hrp = char and char:FindFirstChild("HumanoidRootPart")
 		if hrp then
 			LastCoord = string.format(decode("/67/70/114/97/109/101/46/110/101/119/40/37/46/51/102/44/32/37/46/51/102/44/32/37/46/51/102/41"), hrp.Position.X, hrp.Position.Y, hrp.Position.Z)
 			CoordText.Text = LastCoord
@@ -334,7 +337,7 @@ CheckBtn.MouseButton1Click:Connect(function()
 			CoordText.Text = decode("/40/67/104/97/114/97/99/116/101/114/32/110/111/116/32/102/111/117/110/100/41")
 			CoordText.Visible = true
 		end
-	elseif SelectedCase == decode("/77/111/117/115/101") then
+	elseif SelectedCase == "Mouse" then
 		local m = Mouse
 		if m and m.Hit then
 			local p = m.Hit.Position
@@ -345,7 +348,7 @@ CheckBtn.MouseButton1Click:Connect(function()
 			CoordText.Text = decode("/40/77/111/117/115/101/32/104/105/116/32/110/111/116/32/97/118/97/105/108/97/98/108/101/41")
 			CoordText.Visible = true
 		end
-	elseif SelectedCase == decode("/80/97/114/116") or SelectedCase == decode("/77/111/100/101/108") then
+	elseif SelectedCase == "Part" or SelectedCase == "Model" then
 		awaitClickAndSetCoord(SelectedCase)
 	end
 end)
