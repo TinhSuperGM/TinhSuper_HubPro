@@ -1,12 +1,10 @@
-local function decode(s)
-    return (s:gsub("/(%d+)", function(n)
-        return string.char(tonumber(n))
-    end))
-end
-
 -- TinhSuper Hub - FINAL CLEAN (Delta X / loadstring safe, centered, fonts fixed)
 -- Paste into StarterPlayer -> StarterPlayerScripts as a LocalScript
 -- Or host raw and loadstring(...)() — includes bootstrap safe-wait
+
+local function decode(s)
+    return (s:gsub("/(%d+)", function(n) return string.char(tonumber(n)) end))
+end
 
 local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
@@ -46,7 +44,7 @@ end
 
 -- ===== ScreenGui parented to PlayerGui (not CoreGui) =====
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = decode("/84/105/110/104/83/117/112/101/114/72/117/98/95/70/105/110/97/108")
+screenGui.Name = "TinhSuperHub_Final"
 screenGui.ResetOnSpawn = false
 screenGui.IgnoreGuiInset = true
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
@@ -65,7 +63,7 @@ local activeClickConn = nil
 
 -- ===== LAYER 1: MAIN (centered, AnchorPoint) =====
 local Main = Instance.new("Frame")
-Main.Name = decode("/77/97/105/110")
+Main.Name = "Main"
 Main.Size = UDim2.new(0, 760, 0, 300)
 Main.AnchorPoint = Vector2.new(0.5, 0.5)
 Main.Position = UDim2.new(0.5, 0, 0.5, 0) -- center of screen
@@ -299,7 +297,7 @@ end)
 
 local function awaitClickAndSetCoord(kind)
 	if activeClickConn then activeClickConn:Disconnect(); activeClickConn = nil end
-	CoordText.Text = decode("/40/67/108/105/99/107/32/111/110/32/116/104/101/32/119/111/114/108/100/32/116/111/32/112/105/99/107/32")..kind..")"
+	CoordText.Text = decode("/40/67/108/105/99/107/32/111/110/32/116/104/101/32/119/111/114/108/100/32/116/111/32/112/105/99/107/32/34/46/46/107/105/110/100/46/46/34/41")
 	CoordText.Visible = true
 
 	activeClickConn = Mouse.Button1Down:Connect(function()
