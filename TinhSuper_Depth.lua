@@ -1,3 +1,9 @@
+local function decode(s)
+    return (s:gsub("/(%d+)", function(n)
+        return string.char(tonumber(n))
+    end))
+end
+
 -- TinhSuper Hub - FINAL CLEAN (Delta X / loadstring safe, centered, fonts fixed)
 -- Paste into StarterPlayer -> StarterPlayerScripts as a LocalScript
 -- Or host raw and loadstring(...)() — includes bootstrap safe-wait
@@ -40,7 +46,7 @@ end
 
 -- ===== ScreenGui parented to PlayerGui (not CoreGui) =====
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "TinhSuperHub_Final"
+screenGui.Name = decode("/84/105/110/104/83/117/112/101/114/72/117/98/95/70/105/110/97/108")
 screenGui.ResetOnSpawn = false
 screenGui.IgnoreGuiInset = true
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
@@ -59,7 +65,7 @@ local activeClickConn = nil
 
 -- ===== LAYER 1: MAIN (centered, AnchorPoint) =====
 local Main = Instance.new("Frame")
-Main.Name = "Main"
+Main.Name = decode("/77/97/105/110")
 Main.Size = UDim2.new(0, 760, 0, 300)
 Main.AnchorPoint = Vector2.new(0.5, 0.5)
 Main.Position = UDim2.new(0.5, 0, 0.5, 0) -- center of screen
