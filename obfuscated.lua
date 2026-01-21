@@ -1,3 +1,7 @@
+--[[
+Obfuscated by TinhSuper Bot
+https://discord.gg/Av2SM8wPCD]]
+
 -- VM-WRAP BEGIN
 
 do
@@ -10,17 +14,17 @@ do
         end
         
         if __state == 1 then
-             TinhSuper Hub - FINAL CLEAN (Delta X / loadstring safe, centered, fonts fixed)
+            
             __state = 2
         end
         
         if __state == 2 then
-            -- Paste into StarterPlayer -> StarterPlayerScripts as a LocalScript
+            
             __state = 3
         end
         
         if __state == 3 then
-            -- Or host raw and loadstring(...)() — includes bootstrap safe-wait
+            
             __state = 4
         end
         
@@ -30,42 +34,42 @@ do
         end
         
         if __state == 5 then
-            local _RspZZsps= game:GetService(("P" .. "l" .. "a" .. "y" .. "e" .. "r" .. "s"))
+            local _xcCSqzrL= game:GetService(("P" .. "l" .. "a" .. "y" .. "e" .. "r" .. "s"))
             __state = 6
         end
         
         if __state == 6 then
-            local Players = _RspZZsps
+            local Players = _xcCSqzrL
             __state = 7
         end
         
         if __state == 7 then
-            local _fktDcNQK= game:GetService(("U" .. "s" .. "e" .. "r" .. "I" .. "n" .. "p" .. "u" .. "t" .. "S" .. "e" .. "r" .. "v" .. "i" .. "c" .. "e"))
+            local _CDvvMMXO= game:GetService(("U" .. "s" .. "e" .. "r" .. "I" .. "n" .. "p" .. "u" .. "t" .. "S" .. "e" .. "r" .. "v" .. "i" .. "c" .. "e"))
             __state = 8
         end
         
         if __state == 8 then
-            local UserInputService = _fktDcNQK
+            local UserInputService = _CDvvMMXO
             __state = 9
         end
         
         if __state == 9 then
-            local _iumJgEeF= game:GetService(("R" .. "u" .. "n" .. "S" .. "e" .. "r" .. "v" .. "i" .. "c" .. "e"))
+            local _xdIYITCd= game:GetService(("R" .. "u" .. "n" .. "S" .. "e" .. "r" .. "v" .. "i" .. "c" .. "e"))
             __state = 10
         end
         
         if __state == 10 then
-            local RunService = _iumJgEeF
+            local RunService = _xdIYITCd
             __state = 11
         end
         
         if __state == 11 then
-            local _NdEZUKqR= game:GetService(("W" .. "o" .. "r" .. "k" .. "s" .. "p" .. "a" .. "c" .. "e"))
+            local _BmkmyWQU= game:GetService(("W" .. "o" .. "r" .. "k" .. "s" .. "p" .. "a" .. "c" .. "e"))
             __state = 12
         end
         
         if __state == 12 then
-            local Workspace = _NdEZUKqR
+            local Workspace = _BmkmyWQU
             __state = 13
         end
         
@@ -75,7 +79,7 @@ do
         end
         
         if __state == 14 then
-            -- ===== BOOTSTRAP: wait for client ready (safe for Delta X / loadstring) =====
+            
             __state = 15
         end
         
@@ -85,7 +89,7 @@ do
         end
         
         if __state == 16 then
-            local _gvFFpIsV= Players.LocalPlayer
+            local _gQueZhFI= Players.LocalPlayer
             __state = 17
         end
         
@@ -95,7 +99,7 @@ do
         end
         
         if __state == 18 then
-            local _asPkQvyI= LocalPlayer:FindFirstChildOfClass(("P" .. "l" .. "a" .. "y" .. "e" .. "r" .. "G" .. "u" .. "i"))
+            local _nKUAFwnK= LocalPlayer:FindFirstChildOfClass(("P" .. "l" .. "a" .. "y" .. "e" .. "r" .. "G" .. "u" .. "i"))
             __state = 19
         end
         
@@ -120,7 +124,7 @@ do
         end
         
         if __state == 23 then
-            task.wait(0.12) -- small safety delay
+            task.wait(0.12) 
             __state = 24
         end
         
@@ -130,12 +134,12 @@ do
         end
         
         if __state == 25 then
-            -- ===== helper setZ (accept GuiObject or table of GuiObjects) =====
+            
             __state = 26
         end
         
         if __state == 26 then
-            local _GVYlLMSj(obj, z)
+            local _OhMTcqlG(obj, z)
             __state = 27
         end
         
@@ -220,12 +224,13 @@ do
         end
         
         if __state == 43 then
-            -- ===== ScreenGui parented to PlayerGui (not CoreGui) =====
+            
             __state = 44
         end
         
         if __state == 44 then
-            local _HYUNkYWO= Instance.new(("S" .. "c" .. "r" .. "e" .. "e" .. "n" .. "G" .. "u" .. "i"))
+            local _ZAePHGmO= Instance.new(("S" .. "c" .. "r" .. "e" .. "e" .. "n" .. "G" .. "u" .. "i"))
+            local screenGui = _ZAePHGmO
             __state = 45
         end
         
@@ -265,7 +270,7 @@ do
         end
         
         if __state == 52 then
-            -- cleanup old
+            
             __state = 53
         end
         
@@ -275,7 +280,7 @@ do
         end
         
         if __state == 54 then
-            	local _aHGUWqFt= PlayerGui:FindFirstChild(("T" .. "i" .. "n" .. "h" .. "S" .. "u" .. "p" .. "e" .. "r" .. "H" .. "u" .. "b" .. "_" .. "F" .. "i" .. "n" .. "a" .. "l"))
+            	local _yTLJihBS= PlayerGui:FindFirstChild(("T" .. "i" .. "n" .. "h" .. "S" .. "u" .. "p" .. "e" .. "r" .. "H" .. "u" .. "b" .. "_" .. "F" .. "i" .. "n" .. "a" .. "l"))
             __state = 55
         end
         
@@ -295,17 +300,17 @@ do
         end
         
         if __state == 58 then
-            -- Single Mouse
+            
             __state = 59
         end
         
         if __state == 59 then
-            local _fYweNTKQ= LocalPlayer:GetMouse()
+            local _QwNNZXFo= LocalPlayer:GetMouse()
             __state = 60
         end
         
         if __state == 60 then
-            local _dYXruVwb= nil
+            local _OreALjEY= nil
             __state = 61
         end
         
@@ -315,12 +320,13 @@ do
         end
         
         if __state == 62 then
-            -- ===== LAYER 1: MAIN (centered, AnchorPoint) =====
+            
             __state = 63
         end
         
         if __state == 63 then
-            local _YRabnwgH= Instance.new(("F" .. "r" .. "a" .. "m" .. "e"))
+            local _GFgemdNm= Instance.new(("F" .. "r" .. "a" .. "m" .. "e"))
+            local Main = _GFgemdNm
             __state = 64
         end
         
@@ -340,7 +346,7 @@ do
         end
         
         if __state == 67 then
-            Main.Position = UDim2.new(0.5, 0, 0.5, 0) -- center of screen
+            Main.Position = UDim2.new(0.5, 0, 0.5, 0) 
             __state = 68
         end
         
@@ -375,7 +381,7 @@ do
         end
         
         if __state == 74 then
-            -- Drag (correct: capture startPos when drag begins)
+            
             __state = 75
         end
         
@@ -385,22 +391,22 @@ do
         end
         
         if __state == 76 then
-            	local _dyAVHfoI= false
+            	local _QIrRkDoE= false
             __state = 77
         end
         
         if __state == 77 then
-            	local _heJxchVQ= Vector2.new()
+            	local _FANkcfWR= Vector2.new()
             __state = 78
         end
         
         if __state == 78 then
-            	local _RWtcMaSQ= Main.Position
+            	local _WCTFSqWE= Main.Position
             __state = 79
         end
         
         if __state == 79 then
-            	local _UUWQLGPS= nil
+            	local _mbTASUhO= nil
             __state = 80
         end
         
@@ -430,7 +436,7 @@ do
         end
         
         if __state == 85 then
-            			startPos = Main.Position -- capture here (not earlier)
+            			startPos = Main.Position 
             __state = 86
         end
         
@@ -515,7 +521,7 @@ do
         end
         
         if __state == 102 then
-            			local _kEfSqwpZ= input.Position - dragStart
+            			local _PJNNaBHj= input.Position - dragStart
             __state = 103
         end
         
@@ -570,12 +576,13 @@ do
         end
         
         if __state == 113 then
-            -- ===== LAYER 2: Title / By / Mode button / Action buttons / Close =====
+            
             __state = 114
         end
         
         if __state == 114 then
-            local _XwtKnnjl= Instance.new(("T" .. "e" .. "x" .. "t" .. "L" .. "a" .. "b" .. "e" .. "l"), Main)
+            local _gBePogbn= Instance.new(("T" .. "e" .. "x" .. "t" .. "L" .. "a" .. "b" .. "e" .. "l"), Main)
+            local Title = _gBePogbn
             __state = 115
         end
         
@@ -630,7 +637,8 @@ do
         end
         
         if __state == 125 then
-            local _xjXRifuY= Instance.new(("T" .. "e" .. "x" .. "t" .. "L" .. "a" .. "b" .. "e" .. "l"), Main)
+            local _gwzuIJLi= Instance.new(("T" .. "e" .. "x" .. "t" .. "L" .. "a" .. "b" .. "e" .. "l"), Main)
+            local Font = _gwzuIJLi
             __state = 126
         end
         
@@ -660,7 +668,7 @@ do
         end
         
         if __state == 131 then
-            By.Position = UDim2.new(0, 18, 0, 34) -- closer under Title
+            By.Position = UDim2.new(0, 18, 0, 34) 
             __state = 132
         end
         
@@ -685,7 +693,8 @@ do
         end
         
         if __state == 136 then
-            local _yKFcQBRD= Instance.new(("T" .. "e" .. "x" .. "t" .. "L" .. "a" .. "b" .. "e" .. "l"), Main)
+            local _hCMNtkmD= Instance.new(("T" .. "e" .. "x" .. "t" .. "L" .. "a" .. "b" .. "e" .. "l"), Main)
+            local CoordTitle = _hCMNtkmD
             __state = 137
         end
         
@@ -700,7 +709,7 @@ do
         end
         
         if __state == 139 then
-            CoordTitle.Text = ("Y" .. "o" .. "u" .. "r" .. " " .. "P" .. "o" .. "s" .. "i" .. "t" .. "i" .. "o" .. "n" .. ":") -- English to avoid font issues
+            CoordTitle.Text = ("Y" .. "o" .. "u" .. "r" .. " " .. "P" .. "o" .. "s" .. "i" .. "t" .. "i" .. "o" .. "n" .. ":") 
             __state = 140
         end
         
@@ -715,7 +724,7 @@ do
         end
         
         if __state == 142 then
-            CoordTitle.Position = UDim2.new(0, 18, 0, 70) -- nudged up
+            CoordTitle.Position = UDim2.new(0, 18, 0, 70) 
             __state = 143
         end
         
@@ -740,7 +749,8 @@ do
         end
         
         if __state == 147 then
-            local _YiYfbuWi= Instance.new(("T" .. "e" .. "x" .. "t" .. "B" .. "u" .. "t" .. "t" .. "o" .. "n"), Main)
+            local _ZgCUeshD= Instance.new(("T" .. "e" .. "x" .. "t" .. "B" .. "u" .. "t" .. "t" .. "o" .. "n"), Main)
+            local CaseBtn = _ZgCUeshD
             __state = 148
         end
         
@@ -775,7 +785,7 @@ do
         end
         
         if __state == 154 then
-            CaseBtn.Position = UDim2.new(1, -260, 0, 18) -- right-top nudged up
+            CaseBtn.Position = UDim2.new(1, -260, 0, 18) 
             __state = 155
         end
         
@@ -800,7 +810,8 @@ do
         end
         
         if __state == 159 then
-            local _PtfpvZYq= Instance.new(("T" .. "e" .. "x" .. "t" .. "B" .. "u" .. "t" .. "t" .. "o" .. "n"), Main)
+            local _lneUkTtn= Instance.new(("T" .. "e" .. "x" .. "t" .. "B" .. "u" .. "t" .. "t" .. "o" .. "n"), Main)
+            local CheckBtn = _lneUkTtn
             __state = 160
         end
         
@@ -830,7 +841,7 @@ do
         end
         
         if __state == 165 then
-            CheckBtn.Size = UDim2.new(0, 220, 0, 42) -- reduced width
+            CheckBtn.Size = UDim2.new(0, 220, 0, 42) 
             __state = 166
         end
         
@@ -855,7 +866,8 @@ do
         end
         
         if __state == 170 then
-            local _QmIrftFy= Instance.new(("T" .. "e" .. "x" .. "t" .. "B" .. "u" .. "t" .. "t" .. "o" .. "n"), Main)
+            local _izlhhSfP= Instance.new(("T" .. "e" .. "x" .. "t" .. "B" .. "u" .. "t" .. "t" .. "o" .. "n"), Main)
+            local CopyBtn = _izlhhSfP
             __state = 171
         end
         
@@ -885,7 +897,7 @@ do
         end
         
         if __state == 176 then
-            CopyBtn.Size = UDim2.new(0, 220, 0, 42) -- reduced width
+            CopyBtn.Size = UDim2.new(0, 220, 0, 42) 
             __state = 177
         end
         
@@ -910,7 +922,8 @@ do
         end
         
         if __state == 181 then
-            local _gheUQzQK= Instance.new(("T" .. "e" .. "x" .. "t" .. "B" .. "u" .. "t" .. "t" .. "o" .. "n"), Main)
+            local _UYNKDrsC= Instance.new(("T" .. "e" .. "x" .. "t" .. "B" .. "u" .. "t" .. "t" .. "o" .. "n"), Main)
+            local CloseCircle = _UYNKDrsC
             __state = 182
         end
         
@@ -970,12 +983,13 @@ do
         end
         
         if __state == 193 then
-            -- ===== LAYER 3: Display area (moved up to avoid touching title) =====
+            
             __state = 194
         end
         
         if __state == 194 then
-            local _PDkoRgSN= Instance.new(("F" .. "r" .. "a" .. "m" .. "e"), Main)
+            local _zUnBeLxQ= Instance.new(("F" .. "r" .. "a" .. "m" .. "e"), Main)
+            local DisplayBg = _zUnBeLxQ
             __state = 195
         end
         
@@ -985,7 +999,7 @@ do
         end
         
         if __state == 196 then
-            DisplayBg.Position = UDim2.new(0.03, 0, 0, 102) -- nudged up
+            DisplayBg.Position = UDim2.new(0.03, 0, 0, 102) 
             __state = 197
         end
         
@@ -1015,7 +1029,8 @@ do
         end
         
         if __state == 202 then
-            local _BtPtUqeU= Instance.new(("T" .. "e" .. "x" .. "t" .. "L" .. "a" .. "b" .. "e" .. "l"), DisplayBg)
+            local _ZWsVshAJ= Instance.new(("T" .. "e" .. "x" .. "t" .. "L" .. "a" .. "b" .. "e" .. "l"), DisplayBg)
+            local CoordText = _ZWsVshAJ
             __state = 203
         end
         
@@ -1050,7 +1065,7 @@ do
         end
         
         if __state == 209 then
-            CoordText.Text = "" -- hidden until check
+            CoordText.Text = "" 
             __state = 210
         end
         
@@ -1085,12 +1100,13 @@ do
         end
         
         if __state == 216 then
-            -- ===== LAYER 4: Dropdown popup (overlay) =====
+            
             __state = 217
         end
         
         if __state == 217 then
-            local _ZzruoAhN= Instance.new(("F" .. "r" .. "a" .. "m" .. "e"), screenGui)
+            local _tmJGlsRk= Instance.new(("F" .. "r" .. "a" .. "m" .. "e"), screenGui)
+            local Popup = _tmJGlsRk
             __state = 218
         end
         
@@ -1130,12 +1146,12 @@ do
         end
         
         if __state == 225 then
-            local _VkSyPIHW= {("C" .. "F" .. "r" .. "a" .. "m" .. "e"), ("P" .. "a" .. "r" .. "t"), ("M" .. "o" .. "d" .. "e" .. "l"), ("M" .. "o" .. "u" .. "s" .. "e")}
+            local _HAXTHJJR= {("C" .. "F" .. "r" .. "a" .. "m" .. "e"), ("P" .. "a" .. "r" .. "t"), ("M" .. "o" .. "d" .. "e" .. "l"), ("M" .. "o" .. "u" .. "s" .. "e")}
             __state = 226
         end
         
         if __state == 226 then
-            local _dVWSHolb= ("C" .. "F" .. "r" .. "a" .. "m" .. "e")
+            local _dCQYbBjZ= ("C" .. "F" .. "r" .. "a" .. "m" .. "e")
             __state = 227
         end
         
@@ -1145,7 +1161,8 @@ do
         end
         
         if __state == 228 then
-            	local _WafEMoSZ= Instance.new(("T" .. "e" .. "x" .. "t" .. "B" .. "u" .. "t" .. "t" .. "o" .. "n"), Popup)
+            	local _VZFgdTOt= Instance.new(("T" .. "e" .. "x" .. "t" .. "B" .. "u" .. "t" .. "t" .. "o" .. "n"), Popup)
+            local btn = _VZFgdTOt
             __state = 229
         end
         
@@ -1235,12 +1252,12 @@ do
         end
         
         if __state == 246 then
-            local _OGVevzLj()
+            local _gybbDMBe()
             __state = 247
         end
         
         if __state == 247 then
-            	-- safe wait if AbsoluteSize not ready
+            	
             __state = 248
         end
         
@@ -1250,37 +1267,37 @@ do
         end
         
         if __state == 249 then
-            	local _QHoFlVbb= CaseBtn.AbsolutePosition
+            	local _QMIWpBig= CaseBtn.AbsolutePosition
             __state = 250
         end
         
         if __state == 250 then
-            	local _SczNBSzV= CaseBtn.AbsoluteSize
+            	local _CXekNHSy= CaseBtn.AbsoluteSize
             __state = 251
         end
         
         if __state == 251 then
-            	local _nZeYMeop= Popup.AbsoluteSize.X
+            	local _fWgapqyV= Popup.AbsoluteSize.X
             __state = 252
         end
         
         if __state == 252 then
-            	local _ieVXljED= Popup.AbsoluteSize.Y
+            	local _IHMxXGnK= Popup.AbsoluteSize.Y
             __state = 253
         end
         
         if __state == 253 then
-            	local _jPDtCVfD= ddPos.X + ddSize.X - popupW -- align right
+            	local _RhVMnoxI= ddPos.X + ddSize.X - popupW 
             __state = 254
         end
         
         if __state == 254 then
-            	local _IZeniTFv= ddPos.Y + ddSize.Y + 8
+            	local _Rmkuotja= ddPos.Y + ddSize.Y + 8
             __state = 255
         end
         
         if __state == 255 then
-            	local _FFjLErRU, _CJsKBNjL= Workspace.CurrentCamera.ViewportSize.X, Workspace.CurrentCamera.ViewportSize.Y
+            	local _nXHhHlmj, _tIGjhYld= Workspace.CurrentCamera.ViewportSize.X, Workspace.CurrentCamera.ViewportSize.Y
             __state = 256
         end
         
@@ -1370,17 +1387,17 @@ do
         end
         
         if __state == 273 then
-            			local _ktAoAQdR= UIS:GetMouseLocation()
+            			local _LChRWjZs= UIS:GetMouseLocation()
             __state = 274
         end
         
         if __state == 274 then
-            			local _zJGwXYGe= Popup.AbsolutePosition
+            			local _IOoIdkFr= Popup.AbsolutePosition
             __state = 275
         end
         
         if __state == 275 then
-            			local _DRNIENhX= Popup.AbsoluteSize
+            			local _XsSjsabu= Popup.AbsoluteSize
             __state = 276
         end
         
@@ -1390,7 +1407,7 @@ do
         end
         
         if __state == 277 then
-            				local _oWVHpaTf, _YsILRVvg= CaseBtn.AbsolutePosition, CaseBtn.AbsoluteSize
+            				local _hxwQehGF, _KnoGyBAU= CaseBtn.AbsolutePosition, CaseBtn.AbsoluteSize
             __state = 278
         end
         
@@ -1435,12 +1452,12 @@ do
         end
         
         if __state == 286 then
-            -- ===== Logic: Check / Part/Model selection / Mouse / Copy =====
+            
             __state = 287
         end
         
         if __state == 287 then
-            local _sqDXstOz= ""
+            local _pXwzMMXf= ""
             __state = 288
         end
         
@@ -1450,7 +1467,7 @@ do
         end
         
         if __state == 289 then
-            -- cleanup connection when gui removed
+            
             __state = 290
         end
         
@@ -1485,7 +1502,7 @@ do
         end
         
         if __state == 296 then
-            local _XgiZfXBh(kind)
+            local _ZnDQysZx(kind)
             __state = 297
         end
         
@@ -1515,7 +1532,7 @@ do
         end
         
         if __state == 302 then
-            		local _nFCIYnke= Mouse.Target
+            		local _WKZCjRhf= Mouse.Target
             __state = 303
         end
         
@@ -1540,12 +1557,12 @@ do
         end
         
         if __state == 307 then
-            				local _eiLTfgNy= target:FindFirstAncestorOfClass(("M" .. "o" .. "d" .. "e" .. "l"))
+            				local _CbnWzNht= target:FindFirstAncestorOfClass(("M" .. "o" .. "d" .. "e" .. "l"))
             __state = 308
         end
         
         if __state == 308 then
-            				local _LVdvLKld= model and (model:FindFirstChild(("H" .. "u" .. "m" .. "a" .. "n" .. "o" .. "i" .. "d" .. "R" .. "o" .. "o" .. "t" .. "P" .. "a" .. "r" .. "t")) or model.PrimaryPart) or target
+            				local _YmqCevJD= model and (model:FindFirstChild(("H" .. "u" .. "m" .. "a" .. "n" .. "o" .. "i" .. "d" .. "R" .. "o" .. "o" .. "t" .. "P" .. "a" .. "r" .. "t")) or model.PrimaryPart) or target
             __state = 309
         end
         
@@ -1625,12 +1642,12 @@ do
         end
         
         if __state == 324 then
-            		local _iyhlvygU= LocalPlayer.Character
+            		local _cXVPYhTo= LocalPlayer.Character
             __state = 325
         end
         
         if __state == 325 then
-            		local _PUAotmLs= char and char:FindFirstChild(("H" .. "u" .. "m" .. "a" .. "n" .. "o" .. "i" .. "d" .. "R" .. "o" .. "o" .. "t" .. "P" .. "a" .. "r" .. "t"))
+            		local _ECgUoWGR= char and char:FindFirstChild(("H" .. "u" .. "m" .. "a" .. "n" .. "o" .. "i" .. "d" .. "R" .. "o" .. "o" .. "t" .. "P" .. "a" .. "r" .. "t"))
             __state = 326
         end
         
@@ -1680,7 +1697,7 @@ do
         end
         
         if __state == 335 then
-            		local _ktAoAQdR= Mouse
+            		local _LChRWjZs= Mouse
             __state = 336
         end
         
@@ -1690,7 +1707,7 @@ do
         end
         
         if __state == 337 then
-            			local _LVdvLKld= m.Hit.Position
+            			local _YmqCevJD= m.Hit.Position
             __state = 338
         end
         
@@ -1785,7 +1802,7 @@ do
         end
         
         if __state == 356 then
-            -- final Z enforcement
+            
             __state = 357
         end
         
