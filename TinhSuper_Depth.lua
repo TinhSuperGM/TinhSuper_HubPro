@@ -1,11 +1,3 @@
-local function decode(s)
-    local out = {}
-    for num in string.gmatch(s, "/(%d+)") do
-        out[#out+1] = string.char(tonumber(num))
-    end
-    return table.concat(out)
-end
-
 -- TinhSuper Hub - FINAL CLEAN (Delta X / loadstring safe, centered, fonts fixed)
 -- Paste into StarterPlayer -> StarterPlayerScripts as a LocalScript
 -- Or host raw and loadstring(...)() — includes bootstrap safe-wait
@@ -30,7 +22,7 @@ task.wait(0.12) -- small safety delay
 
 -- ===== helper setZ (accept GuiObject or table of GuiObjects) =====
 local function setZ(obj, z)
-	if type(obj) == decode("/116/97/98/108/101") then
+	if type(obj) == "table" then
 		for _, v in ipairs(obj) do
 			setZ(v, z)
 		end
@@ -48,7 +40,7 @@ end
 
 -- ===== ScreenGui parented to PlayerGui (not CoreGui) =====
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = decode("/84/105/110/104/83/117/112/101/114/72/117/98/95/70/105/110/97/108")
+screenGui.Name = "TinhSuperHub_Final"
 screenGui.ResetOnSpawn = false
 screenGui.IgnoreGuiInset = true
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
@@ -57,7 +49,7 @@ screenGui.Parent = PlayerGui
 
 -- cleanup old
 pcall(function()
-	local old = PlayerGui:FindFirstChild(decode("/84/105/110/104/83/117/112/101/114/72/117/98/95/70/105/110/97/108"))
+	local old = PlayerGui:FindFirstChild("TinhSuperHub_Final")
 	if old and old ~= screenGui then old:Destroy() end
 end)
 
@@ -187,7 +179,7 @@ setZ(CopyBtn, 20)
 local CloseCircle = Instance.new("TextButton", Main)
 CloseCircle.Font = Enum.Font.GothamBold
 CloseCircle.TextSize = 20
-CloseCircle.Text = "X"
+CloseCircle.Text = decode("/88")
 CloseCircle.TextColor3 = Color3.fromRGB(30,30,30)
 CloseCircle.BackgroundColor3 = Color3.fromRGB(245,245,245)
 CloseCircle.Size = UDim2.new(0,48,0,48)
@@ -244,7 +236,7 @@ for i, name in ipairs(options) do
 
 	btn.MouseButton1Click:Connect(function()
 		SelectedCase = name
-		CaseBtn.Text = name..decode("/32/32/9662")
+		CaseBtn.Text = name.."  ▾"
 		Popup.Visible = false
 	end)
 end
@@ -308,11 +300,11 @@ local function awaitClickAndSetCoord(kind)
 		local target = Mouse.Target
 		if target and target:IsA("BasePart") then
 			if kind == "Part" then
-				LastCoord = string.format(decode("/67/70/114/97/109/101/46/110/101/119/40/37/46/51/102/44/32/37/46/51/102/44/32/37/46/51/102/41"), target.Position.X, target.Position.Y, target.Position.Z)
+				LastCoord = string.format("CFrame.new(%.3f, %.3f, %.3f)", target.Position.X, target.Position.Y, target.Position.Z)
 			else
 				local model = target:FindFirstAncestorOfClass("Model")
 				local p = model and (model:FindFirstChild("HumanoidRootPart") or model.PrimaryPart) or target
-				LastCoord = string.format(decode("/67/70/114/97/109/101/46/110/101/119/40/37/46/51/102/44/32/37/46/51/102/44/32/37/46/51/102/41"), p.Position.X, p.Position.Y, p.Position.Z)
+				LastCoord = string.format("CFrame.new(%.3f, %.3f, %.3f)", p.Position.X, p.Position.Y, p.Position.Z)
 			end
 			CoordText.Text = LastCoord
 			CoordText.Visible = true
@@ -330,7 +322,7 @@ CheckBtn.MouseButton1Click:Connect(function()
 		local char = LocalPlayer.Character
 		local hrp = char and char:FindFirstChild("HumanoidRootPart")
 		if hrp then
-			LastCoord = string.format(decode("/67/70/114/97/109/101/46/110/101/119/40/37/46/51/102/44/32/37/46/51/102/44/32/37/46/51/102/41"), hrp.Position.X, hrp.Position.Y, hrp.Position.Z)
+			LastCoord = string.format("CFrame.new(%.3f, %.3f, %.3f)", hrp.Position.X, hrp.Position.Y, hrp.Position.Z)
 			CoordText.Text = LastCoord
 			CoordText.Visible = true
 		else
@@ -341,7 +333,7 @@ CheckBtn.MouseButton1Click:Connect(function()
 		local m = Mouse
 		if m and m.Hit then
 			local p = m.Hit.Position
-			LastCoord = string.format(decode("/86/101/99/116/111/114/51/46/110/101/119/40/37/46/51/102/44/32/37/46/51/102/44/32/37/46/51/102/41"), p.X, p.Y, p.Z)
+			LastCoord = string.format("Vector3.new(%.3f, %.3f, %.3f)", p.X, p.Y, p.Z)
 			CoordText.Text = LastCoord
 			CoordText.Visible = true
 		else
@@ -366,4 +358,4 @@ setZ(DisplayBg, 25)
 setZ(CoordText, 30)
 setZ(Popup, 60)
 
-print(decode("/91/84/105/110/104/83/117/112/101/114/72/117/98/93/32/70/105/110/97/108/32/108/111/97/100/101/100/32/40/99/101/110/116/101/114/101/100/44/32/71/111/116/104/97/109/32/102/111/110/116/115/44/32/68/101/108/116/97/88/45/115/97/102/101/41"))
+print("[TinhSuperHub] Final loaded (centered, Gotham fonts, DeltaX-safe)")
