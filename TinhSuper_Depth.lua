@@ -2,10 +2,6 @@
 -- Paste into StarterPlayer -> StarterPlayerScripts as a LocalScript
 -- Or host raw and loadstring(...)() — includes bootstrap safe-wait
 
-local function decode(s)
-    return (s:gsub("/(%d+)", function(n) return string.char(tonumber(n)) end))
-end
-
 local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
@@ -44,7 +40,7 @@ end
 
 -- ===== ScreenGui parented to PlayerGui (not CoreGui) =====
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "TinhSuperHub_Final"
+screenGui.Name = "\84\105\110\104\83\117\112\101\114\72\117\98\95\70\105\110\97\108"
 screenGui.ResetOnSpawn = false
 screenGui.IgnoreGuiInset = true
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
@@ -63,7 +59,7 @@ local activeClickConn = nil
 
 -- ===== LAYER 1: MAIN (centered, AnchorPoint) =====
 local Main = Instance.new("Frame")
-Main.Name = "Main"
+Main.Name = "\77\97\105\110"
 Main.Size = UDim2.new(0, 760, 0, 300)
 Main.AnchorPoint = Vector2.new(0.5, 0.5)
 Main.Position = UDim2.new(0.5, 0, 0.5, 0) -- center of screen
@@ -116,7 +112,7 @@ end
 local Title = Instance.new("TextLabel", Main)
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 28
-Title.Text = decode("/84/105/110/104/83/117/112/101/114/32/72/117/98")
+Title.Text = "\84\105\110\104\83\117\112\101\114\32\72\117\98"
 Title.TextColor3 = Color3.fromRGB(255,255,255)
 Title.BackgroundTransparency = 1
 Title.Position = UDim2.new(0, 16, 0, 10)
@@ -127,7 +123,7 @@ setZ(Title, 20)
 local By = Instance.new("TextLabel", Main)
 By.Font = Enum.Font.Gotham
 By.TextSize = 14
-By.Text = decode("/98/121/32/116/105/110/104/115/117/112/101/114/95/103/109")
+By.Text = "\98\121\32\116\105\110\104\115\117\112\101\114\95\103\109"
 By.TextColor3 = Color3.fromRGB(230,230,230)
 By.BackgroundTransparency = 1
 By.Position = UDim2.new(0, 18, 0, 34) -- closer under Title
@@ -138,7 +134,7 @@ setZ(By, 20)
 local CoordTitle = Instance.new("TextLabel", Main)
 CoordTitle.Font = Enum.Font.GothamBold
 CoordTitle.TextSize = 20
-CoordTitle.Text = decode("/89/111/117/114/32/80/111/115/105/116/105/111/110/58") -- English to avoid font issues
+CoordTitle.Text = "\89\111\117\114\32\80\111\115\105\116\105\111\110\58" -- English to avoid font issues
 CoordTitle.TextColor3 = Color3.fromRGB(220,40,40)
 CoordTitle.BackgroundTransparency = 1
 CoordTitle.Position = UDim2.new(0, 18, 0, 70) -- nudged up
@@ -149,7 +145,7 @@ setZ(CoordTitle, 20)
 local CaseBtn = Instance.new("TextButton", Main)
 CaseBtn.Font = Enum.Font.Gotham
 CaseBtn.TextSize = 18
-CaseBtn.Text = decode("/77/111/100/101/32/32/128315")
+CaseBtn.Text = "\77\111\100\101\32\32\128315"
 CaseBtn.TextColor3 = Color3.fromRGB(30,30,30)
 CaseBtn.BackgroundColor3 = Color3.fromRGB(230,230,230)
 CaseBtn.Size = UDim2.new(0, 220, 0, 42)
@@ -161,7 +157,7 @@ setZ(CaseBtn, 22)
 local CheckBtn = Instance.new("TextButton", Main)
 CheckBtn.Font = Enum.Font.GothamBold
 CheckBtn.TextSize = 18
-CheckBtn.Text = decode("/67/104/101/99/107/32/80/111/115/105/116/105/111/110")
+CheckBtn.Text = "\67\104\101\99\107\32\80\111\115\105\116\105\111\110"
 CheckBtn.TextColor3 = Color3.fromRGB(255,255,255)
 CheckBtn.BackgroundColor3 = Color3.fromRGB(39,180,40)
 CheckBtn.Size = UDim2.new(0, 220, 0, 42) -- reduced width
@@ -172,7 +168,7 @@ setZ(CheckBtn, 20)
 local CopyBtn = Instance.new("TextButton", Main)
 CopyBtn.Font = Enum.Font.GothamBold
 CopyBtn.TextSize = 18
-CopyBtn.Text = decode("/67/111/112/121/32/80/111/115/105/116/105/111/110")
+CopyBtn.Text = "\67\111\112\121\32\80\111\115\105\116\105\111\110"
 CopyBtn.TextColor3 = Color3.fromRGB(255,255,255)
 CopyBtn.BackgroundColor3 = Color3.fromRGB(60,140,220)
 CopyBtn.Size = UDim2.new(0, 220, 0, 42) -- reduced width
@@ -183,7 +179,7 @@ setZ(CopyBtn, 20)
 local CloseCircle = Instance.new("TextButton", Main)
 CloseCircle.Font = Enum.Font.GothamBold
 CloseCircle.TextSize = 20
-CloseCircle.Text = decode("/88")
+CloseCircle.Text = "\88"
 CloseCircle.TextColor3 = Color3.fromRGB(30,30,30)
 CloseCircle.BackgroundColor3 = Color3.fromRGB(245,245,245)
 CloseCircle.Size = UDim2.new(0,48,0,48)
@@ -297,7 +293,7 @@ end)
 
 local function awaitClickAndSetCoord(kind)
 	if activeClickConn then activeClickConn:Disconnect(); activeClickConn = nil end
-	CoordText.Text = decode("/40/67/108/105/99/107/32/111/110/32/116/104/101/32/119/111/114/108/100/32/116/111/32/112/105/99/107/32/34/46/46/107/105/110/100/46/46/34/41")
+	CoordText.Text = "\40\67\108\105\99\107\32\111\110\32\116\104\101\32\119\111\114\108\100\32\116\111\32\112\105\99\107\32"..kind..")"
 	CoordText.Visible = true
 
 	activeClickConn = Mouse.Button1Down:Connect(function()
@@ -314,7 +310,7 @@ local function awaitClickAndSetCoord(kind)
 			CoordText.Visible = true
 			if activeClickConn then activeClickConn:Disconnect(); activeClickConn = nil end
 		else
-			CoordText.Text = decode("/40/73/110/118/97/108/105/100/32/99/108/105/99/107/32/8212/32/116/114/121/32/97/103/97/105/110/41")
+			CoordText.Text = "\40\73\110\118\97\108\105\100\32\99\108\105\99\107\32\8212\32\116\114\121\32\97\103\97\105\110\41"
 			CoordText.Visible = true
 		end
 	end)
@@ -330,7 +326,7 @@ CheckBtn.MouseButton1Click:Connect(function()
 			CoordText.Text = LastCoord
 			CoordText.Visible = true
 		else
-			CoordText.Text = decode("/40/67/104/97/114/97/99/116/101/114/32/110/111/116/32/102/111/117/110/100/41")
+			CoordText.Text = "\40\67\104\97\114\97\99\116\101\114\32\110\111\116\32\102\111\117\110\100\41"
 			CoordText.Visible = true
 		end
 	elseif SelectedCase == "Mouse" then
@@ -341,7 +337,7 @@ CheckBtn.MouseButton1Click:Connect(function()
 			CoordText.Text = LastCoord
 			CoordText.Visible = true
 		else
-			CoordText.Text = decode("/40/77/111/117/115/101/32/104/105/116/32/110/111/116/32/97/118/97/105/108/97/98/108/101/41")
+			CoordText.Text = "\40\77\111\117\115\101\32\104\105\116\32\110\111\116\32\97\118\97\105\108\97\98\108\101\41"
 			CoordText.Visible = true
 		end
 	elseif SelectedCase == "Part" or SelectedCase == "Model" then
